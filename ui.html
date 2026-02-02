@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AI Study Assistant</title>
+</head>
+<body>
+<h1>AI Study Assistant</h1>
+
+<h2>Upload Text for Summary</h2>
+<input type="file" id="textFile">
+<button onclick="uploadText()">Summarize</button>
+<p id="summary"></p>
+
+<script>
+async function uploadText() {
+    const file = document.getElementById("textFile").files[0];
+    const formData = new FormData();
+    formData.append("file", file);
+
+    const response = await fetch("/summarize", { method: "POST", body: formData });
+    const data = await response.json();
+    document.getElementById("summary").innerText = data.summary;
+}
+</script>
+</body>
+</html>
