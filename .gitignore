@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# IDE / Editor settings
+.vscode/
+.idea/
+
+# AI model cache
+.cache/
+torch_cache/
+huggingface/
+
+# Temporary files
+uploads/
+temp/
